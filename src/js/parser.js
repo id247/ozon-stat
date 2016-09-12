@@ -28,9 +28,9 @@ export default (function (window, document, $){
 		function compare(a,b) {
 			//console.log(a.date, b.date);
 			//console.log(new Date(a.date), new Date(b.date));
-			if (new Date(a.timestamp) < new Date(b.timestamp))
+			if (new Date(a.timestampChange) < new Date(b.timestampChange))
 				return -1;
-			if (new Date(a.timestamp) > new Date(b.timestamp))
+			if (new Date(a.timestampChange) > new Date(b.timestampChange))
 				return 1;
 			return 0;
 		}
@@ -39,10 +39,8 @@ export default (function (window, document, $){
 
 			const orderItems = items.filter( item => item.postingid === orderId);
 
-			const timestamp = orderItems[0].date.replace(/(.*)\.(.*)\.(.*)\ (.*)/g, '$2.$1.$3 $4');
-
-			console.log(orderItems[0].date);
-			console.log(timestamp);
+			const timestampDate = orderItems[0].date.replace(/(.*)\.(.*)\.(.*)\ (.*)/g, '$2.$1.$3 $4');
+			const timestampChange = orderItems[0].statechangemoment.replace(/(.*)\.(.*)\.(.*)\ (.*)/g, '$2.$1.$3 $4');
 
 			let orderPice = 0;
 			let orderCommission = 0;
@@ -58,7 +56,9 @@ export default (function (window, document, $){
 				orderCommission: orderCommission,
 				count: orderItems.length,
 				date: orderItems[0].date,
-				timestamp: timestamp,
+				change: orderItems[0].statechangemoment,
+				timestampDate: timestampDate,
+				timestampChange: timestampChange,
 				adentId: orderItems[0].agentid,
 				status: orderItems[0].state == 'done' ? 'Выполнен' : 'Аннулирован',
 			};
@@ -79,6 +79,7 @@ export default (function (window, document, $){
 				orderCommission: parseFloat(order.orderCommission).toFixed(2),
 				count: order.count,
 				date: order.date,
+				change: order.change,
 				adentId: order.adentId,
 				status: order.status,
 			});

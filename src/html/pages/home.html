@@ -37,21 +37,21 @@
 		
 			<div class="form__input-placeholder">
 					
-				<input type="text" class="form__input form__input--m required" name="partnerName" placeholder="partnerName" value="dnevnik_ru" />
+				<input type="text" class="form__input form__input--m required" name="partnerName" placeholder="partnerName" value="" />
 		
 			</div> <!-- /.form__input-placeholder -->
 
 		
 			<div class="form__input-placeholder">
 					
-				<input type="text" class="form__input form__input--m required" name="login" placeholder="login" value="semenuha@company.dnevnik.ru" />
+				<input type="text" class="form__input form__input--m required" name="login" placeholder="login" value="" />
 		
 			</div> <!-- /.form__input-placeholder -->
 
 		
 			<div class="form__input-placeholder">
 					
-				<input type="text" class="form__input form__input--m required" name="password" placeholder="password" value="Ffv@4/2#1" /> 
+				<input type="text" class="form__input form__input--m required" name="password" placeholder="password" value="" /> 
 		
 			</div> <!-- /.form__input-placeholder -->
 
@@ -77,6 +77,8 @@
 			</div> <!-- /.form__button-placeholder -->
 		
 		</form> <!-- /.form -->
+
+		<!-- <iframe src="about:blank" frameborder="1" id="request-iframe" class="request__iframe"></iframe> -->
 
 		<form action="#" class="request__xml form" id="xml-form">
 		
@@ -117,7 +119,10 @@
 					Id заказа
 				</div>
 				<div class="table__th">
-					Дата
+					Дата оформления
+				</div>
+				<div class="table__th">
+					Дата изменения
 				</div>
 				<div class="table__th">
 					Сумма
@@ -146,6 +151,9 @@
 					{{date}}
 				</div>
 				<div class="table__td">
+					{{change}}
+				</div>
+				<div class="table__td">
 					{{orderPice}}
 				</div>
 				<div class="table__td">
@@ -165,6 +173,9 @@
 
 		<script id="orders-footer-template" type="text/x-handlebars-template">
 			<div class="table__tr">
+				<div class="table__td">
+					
+				</div>
 				<div class="table__td">
 					
 				</div>

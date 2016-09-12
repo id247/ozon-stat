@@ -4,9 +4,9 @@ export default (function (window, document, $){
 	console.log('run');
 
 	const $form = $('#get-xml-form');
+	const $ifarme = $('#request-iframe');
 	const $from = $form.find('[name="dateFrom"]');
 	const $to = $form.find('[name="dateTo"]');
-	const $ordersType = $form.find('[name="ordersType"]:checked');
 
 	const urls = {
 		done: {
@@ -28,9 +28,30 @@ export default (function (window, document, $){
 	function actions(){		
 
 		$form.on('submit', function(e){
+			//e.preventDefault();
 
-			let interval = $to.val().length === 0 ? 'normal' : 'interval';
-			const ordersType = $ordersType.val();
+			const partnerName = this.elements.partnerName.value;
+			const login = this.elements.login.value;
+			const password = this.elements.password.value;
+			const dateFrom = this.elements.dateFrom.value;
+			const dateTo = this.elements.dateTo.value;
+
+			let interval = dateTo.length === 0 ? 'normal' : 'interval';
+			const ordersType = $form.find('[name="ordersType"]:checked').val();
+
+			console.log(ordersType);
+
+			// const fullUrl = urls[ordersType][interval]
+			// 				+ '?partnerName=' + encodeURIComponent(partnerName)
+			// 				+ '&login=' + encodeURIComponent(login)
+			// 				+ '&password=' + encodeURIComponent(password)
+			// 				+ '&dateFrom=' + encodeURIComponent(dateFrom)
+			// 				+ (dateTo.length > 0 ? '&dateTo=' + encodeURIComponent(dateTo) : '')
+			// 				;
+
+			// 				console.log(fullUrl);
+
+			//$ifarme.attr('src', fullUrl );
 
 			$form.attr('action', urls[ordersType][interval]);
 		});

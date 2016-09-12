@@ -55,6 +55,14 @@
 		margin: 0 5% 20px 0;
 	}
 
+	&__iframe{
+		width: 20%;
+		float: left;
+		height: 280px;
+		margin: 0 2% 20px 0;
+		border: 1px solid #ccc;
+	}
+
 	&__xml{
 		float: left;
 		width: 65%;
