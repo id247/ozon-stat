@@ -38,6 +38,17 @@
 		}
 	}
 
+	&--blue{
+		background: #0273b2;
+		color: #fff;
+		&:hover{
+			background: lighten(#0273b2, 5%);
+		}
+		&:active{
+			background: darken(#0273b2, 5%);
+		}
+	}
+
 	&--m{
 		border-radius: 8px;
 		font-weight: 700;
@@ -106,6 +117,7 @@
 
 	&__button-placeholder{
 		margin-top: 20px;
+		text-align: center;
 	}
 
 	&__input,
@@ -126,16 +138,16 @@
 		}
 	}
 	&__input{
-		&--h40{
-			height: 40px;
-			line-height: 40px;
+		&--m{
+			height: 30px;
+			line-height: 30px;
 		}
 	}
 	&__textarea{
 		padding-top: 10px;
 		height: 210px;
-		&--h120{
-			height: 120px;
+		&--m{
+			height: 283px;
 		}
 	}
 }

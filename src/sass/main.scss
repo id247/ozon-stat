@@ -17,11 +17,11 @@
  * ========================================================================== */
 
 .section{
-	padding: 80px 0 80px;
+	padding: 20px 0 20px;
 
 	&__wrap{
 		@include clearfix;
-		max-width: 1000px;
+		//max-width: 1000px;
 		padding: 0 10px;
 		margin: auto;
 	}
@@ -30,8 +30,11 @@
 		text-align: center;
 		margin: 0 0 40px;
 		font-weight: 700;
-		font-size: 36px;
+		font-size: 25px;
 		line-height: (50/36);
+		&:last-child{
+			margin-bottom: 0;
+		}
 	}
 
 	&__text{
@@ -40,3 +43,57 @@
 }
 
  
+/* ==========================================================================
+ * request
+ * ========================================================================== */
+
+.request{
+
+	&__form{
+		width: 30%;
+		float: left;
+		margin: 0 5% 20px 0;
+	}
+
+	&__xml{
+		float: left;
+		width: 65%;
+		margin: 0 0 20px;
+	}
+}
+
+ 
+/* ==========================================================================
+ * request
+ * ========================================================================== */
+
+.xml-parse{
+
+	&__form{
+		margin: 0 0 20px;
+	}
+}
+
+/* ==========================================================================
+ * table
+ * ========================================================================== */
+
+.table{
+	display: table;
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 14px;
+	
+	&__tr{
+		display: table-row;
+	}
+
+	&__th,
+	&__td{
+		display: table-cell;
+		padding: 10px;
+		border: 1px solid;
+	}
+}
+
+

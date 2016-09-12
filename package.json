@@ -35,6 +35,7 @@
     "gulp-util": "latest",
     "gulp-watch": "latest",
     "gulp.spritesmith": "latest",
+    "handlebars": "^4.0.5",
     "rev-hash": "^1.0.0",
     "strip-loader": "^0.1.2",
     "webpack": "^1.13.1"

@@ -1,1 +1,194 @@
-<h1>HOME</h1>
+
+<section class="container__section section header" id="header">
+	
+	<div class="section__wrap header__wrap">
+
+		<h1 class="section__title header__title">
+			Статистика
+		</h1>
+	
+	</div> <!-- /.header__wrap -->
+
+</section> <!-- /.header -->
+
+
+<section class="container__section section request" id="request">
+	
+	<div class="section__wrap request__wrap">
+
+		<form action="http://ows.ozon.ru/PartnerStatisticsService/PartnerStatisticsService.asmx/GetPartnerStatisticInformation" target="_blank" class="request__form form" method="get" id="get-xml-form">
+		
+			<div class="form__input-placeholder">
+				
+				<label>
+					<input type="radio" name="ordersType" value="done" checked>
+					Выполненные заказы
+				</label>
+
+			</div> <!-- /.form__input-placeholder -->
+			<div class="form__input-placeholder">
+				
+				<label>
+					<input type="radio" name="ordersType" value="waiting" >
+					Ожидающие выполнения
+				</label>
+
+			</div> <!-- /.form__input-placeholder -->
+		
+			<div class="form__input-placeholder">
+					
+				<input type="text" class="form__input form__input--m required" name="partnerName" placeholder="partnerName" value="dnevnik_ru" />
+		
+			</div> <!-- /.form__input-placeholder -->
+
+		
+			<div class="form__input-placeholder">
+					
+				<input type="text" class="form__input form__input--m required" name="login" placeholder="login" value="semenuha@company.dnevnik.ru" />
+		
+			</div> <!-- /.form__input-placeholder -->
+
+		
+			<div class="form__input-placeholder">
+					
+				<input type="text" class="form__input form__input--m required" name="password" placeholder="password" value="Ffv@4/2#1" /> 
+		
+			</div> <!-- /.form__input-placeholder -->
+
+		
+			<div class="form__input-placeholder">
+					
+				<input type="date" class="form__input form__input--m" name="dateFrom" placeholder="dateFrom" value="" />
+		
+			</div> <!-- /.form__input-placeholder -->
+
+		
+			<div class="form__input-placeholder">
+					
+				<input type="date" class="form__input form__input--m" name="dateTo" placeholder="dateTo" value="" />
+		
+			</div> <!-- /.form__input-placeholder -->
+
+
+			<div class="form__button-placeholder">
+					
+				<button type="submit" class="button button--blue button--m">Получить данные</button>
+		
+			</div> <!-- /.form__button-placeholder -->
+		
+		</form> <!-- /.form -->
+
+		<form action="#" class="request__xml form" id="xml-form">
+		
+			<div class="form__input-placeholder">
+																	
+				<textarea name="message" class="form__textarea form__textarea--m required" placeholder="XML"></textarea>
+		
+			</div> <!-- /.form__input-placeholder -->
+			
+			<div class="form__button-placeholder">
+					
+				<button type="submit" class="button button--blue button--m">Проверить данные</button>
+		
+			</div> <!-- /.form__button-placeholder -->
+
+		</form>
+	
+	</div> <!-- /.request__wrap -->
+
+</section> <!-- /.request -->
+
+
+<section class="container__section section xml-parse">
+	
+	<div class="section__wrap xml-parse__wrap">
+		
+		<div class="xml-parse__result">
+			
+			<div class="table" id="xml-result">
+
+			</div>
+
+		</div><!-- /.xml-parse__result -->
+
+		<script id="orders-header-template" type="text/x-handlebars-template">
+			<div class="table__tr">
+				<div class="table__th">
+					Id заказа
+				</div>
+				<div class="table__th">
+					Дата
+				</div>
+				<div class="table__th">
+					Сумма
+				</div>	
+				<div class="table__th">
+					Комиссия
+				</div>	
+				<div class="table__th">
+					Кол-во товаров
+				</div>		
+				<div class="table__th">
+					AgentId
+				</div>		
+				<div class="table__th">
+					Статус
+				</div>					
+			</div>
+		</script>
+
+		<script id="order-template" type="text/x-handlebars-template">
+			<div class="table__tr">
+				<div class="table__td">
+					{{orderId}}
+				</div>
+				<div class="table__td">
+					{{date}}
+				</div>
+				<div class="table__td">
+					{{orderPice}}
+				</div>
+				<div class="table__td">
+					{{orderCommission}}
+				</div>
+				<div class="table__td">
+					{{count}}
+				</div>
+				<div class="table__td">
+					{{adentId}}
+				</div>
+				<div class="table__td">
+					{{status}}
+				</div>
+			</div>
+		</script>
+
+		<script id="orders-footer-template" type="text/x-handlebars-template">
+			<div class="table__tr">
+				<div class="table__td">
+					
+				</div>
+				<div class="table__td">
+					Итого:
+				</div>
+				<div class="table__td">
+					{{totalPice}}
+				</div>
+				<div class="table__td">
+					{{totalCommission}}
+				</div>
+				<div class="table__td">
+					{{totalCount}}
+				</div>
+				<div class="table__td">
+					
+				</div>
+				<div class="table__td">
+
+				</div>
+			</div>
+		</script>
+	
+	</div> <!-- /.xml-parse__wrap -->
+
+</section> <!-- /.xml-parse -->

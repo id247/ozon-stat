@@ -211,7 +211,7 @@ gulp.task('vers', function(){
 		return node;
 	}
 
-	return gulp.src([destFolder + '/{dnevnik,mosreg}/*.html'])
+	return gulp.src([destFolder + '/**/*.html'])
 		.pipe($.posthtml(plugins))
 		.on('error', $.notify.onError())
 		.pipe(gulp.dest(destFolder));

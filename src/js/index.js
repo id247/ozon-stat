@@ -1,9 +1,11 @@
 'use strict'
 
-import app from './app';
+import form from './form';
+import parser from './parser';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-	app.init();
+	parser.init();
+	form.init();
 
 });   
